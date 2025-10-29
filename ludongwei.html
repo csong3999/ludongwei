@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>卢东威商务考察行程纲要 (哈萨克斯坦 & 巴基斯坦)</title>
+    <style>
+        /* * 专业秘书风格CSS
+         * 确保在所有设备上都能清晰、专业地显示。
+         */
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.7;
+            background-color: #f4f7f6;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 20px auto;
+            background: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.07);
+            overflow: hidden;
+            border: 1px solid #e0e0e0;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #004a80, #005a9c);
+            color: #ffffff;
+            padding: 30px 40px;
+            text-align: center;
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 28px;
+            font-weight: 600;
+        }
+
+        .intro {
+            padding: 25px 40px;
+            background: #fdfdfd;
+            border-bottom: 1px solid #eee;
+            font-size: 1.1em;
+        }
+
+        /* * 关键的 "可折叠" 样式
+         */
+        details {
+            margin: 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        details:last-of-type {
+            border-bottom: none;
+        }
+
+        summary {
+            padding: 22px 40px;
+            font-size: 20px;
+            font-weight: 600;
+            cursor: pointer;
+            background: #f9f9f9;
+            color: #004a80;
+            list-style: none; /* 隐藏默认的箭头 */
+            position: relative;
+            outline: none;
+        }
+
+        /* 自定义箭头 */
+        summary::after {
+            content: '+';
+            font-family: monospace;
+            font-size: 24px;
+            position: absolute;
+            right: 40px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #005a9c;
+            transition: transform 0.2s;
+        }
+
+        details[open] summary::after {
+            content: '−';
+            transform: translateY(-50%);
+        }
+
+        details[open] summary {
+            background: #eef5fa;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .content {
+            padding: 25px 40px;
+            background: #ffffff;
+        }
+
+        /* * 表格样式
+         */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 14px 16px;
+            text-align: left;
+            vertical-align: top;
+        }
+
+        th {
+            background-color: #f2f7fb;
+            font-weight: 600;
+            color: #333;
+        }
+
+        tbody tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        /* * 内容增强样式
+         */
+        .budget-adjustment { /* Kept for consistency if needed later */
+            font-size: 0.9em;
+            color: #555;
+            display: block;
+            margin-top: 5px;
+        }
+
+        .budget-no-cut { /* Kept for consistency if needed later */
+            font-weight: bold;
+            color: #c9302c;
+        }
+
+        .warning-box {
+            background: #fff8e1;
+            border: 1px solid #ffeeba;
+            color: #856404;
+            padding: 18px 25px;
+            border-radius: 8px;
+            margin-top: 15px;
+        }
+
+        .checklist h3, .analysis h3 {
+            color: #004a80;
+            border-bottom: 2px solid #eef5fa;
+            padding-bottom: 8px;
+            margin-top: 15px;
+            margin-bottom: 15px;
+            font-size: 1.2em;
+        }
+
+        .analysis h4 {
+            color: #333;
+            font-size: 1.1em;
+            margin-bottom: 10px;
+            margin-top: 20px;
+        }
+
+        .analysis h5 {
+             color: #004a80;
+             font-size: 1.05em;
+             margin-top: 15px;
+             margin-bottom: 8px;
+        }
+
+        .analysis ul {
+            list-style-type: square;
+            padding-left: 20px;
+            margin-bottom: 20px;
+        }
+
+        .analysis li {
+             margin-bottom: 8px;
+        }
+
+        /* Style for market locations */
+        .market-location {
+            font-weight: bold;
+            background-color: #eef5fa; /* Light blue background */
+            padding: 2px 6px;
+            border-radius: 4px;
+            display: inline-block; /* Keep it neat */
+            margin: 2px 0; /* Spacing for multiple locations */
+        }
+
+        .market-note {
+             font-style: italic;
+             color: #555;
+             margin-top: 5px;
+             display: block; /* Ensure it's on its own line */
+        }
+
+
+        .checklist ul {
+            list-style-type: square;
+            padding-left: 20px;
+        }
+
+        .checklist li {
+            margin-bottom: 12px;
+        }
+
+        .key-point {
+            font-weight: 600;
+            color: #c9302c; /* Red color for emphasis */
+        }
+
+
+        .footer {
+            padding: 30px 40px;
+            text-align: center;
+            font-size: 0.95em;
+            color: #777;
+            background: #f9f9f9;
+            border-top: 1px solid #eee;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+
+        <header class="header">
+            <h1>卢东威商务考察行程纲要 (哈萨克斯坦 & 巴基斯坦)</h1>
+        </header>
+
+        <div class="intro">
+            <p>本次出差规划，以及市场概述，</p>
+            <p>手机卡2张，已经区分哈萨克斯坦和巴基斯坦，飞机落地后更换。</p>
+            <p class="market-note">1，插卡后打开蜂窝数据，打开数据漫游，中国卡关闭数据漫游和蜂窝。</p>
+        </div>
+
+        <details open>
+            <summary>一. 出行前准备清单 (起居住行)</summary>
+            <div class="content checklist">
+
+                <h3>A. 核心文件与证件 (随身携带)</h3>
+                <ul>
+                    <li><b>护照原件：</b> (已检查，有效期 > 6个月)。</li>
+                    <li><b>巴基斯坦E-Visa：</b> (已出签，A4纸质彩色打印2份)。</li>
+                    <li><b>哈萨克斯坦过境：</b> (免签)。</li>
+                    <li><b>全程航班行程单：</b> (已打印)。</li>
+                    <li><b>酒店预订单：</b> (已由本地接待方确认并发送至您邮箱)。</li>
+                </ul>
+
+                <h3>B. 商务工具 (公文包)</h3>
+                <ul>
+                    <li><b>产品手册 (PDF图册存手机)：</b> 电子文档。</li>
+                    <li><b>产品样品 (高端型号)：</b> 2套音频，2套吹风机。</li>
+                    <li><b>谈判资料包 (已备)：</b> 含公司资质、认证概要、<b>我司人民币结算银行信息</b>。</li>
+                </ul>
+
+                <h3>C. 通讯与电子设备</h3>
+                <ul>
+                    <li><b>手机 (eSIM方案)：</b> (已购买安装，落地即用，保持中国号码短信畅通)。</li>
+                    <li><b>通讯App：</b> (已装妥 WhatsApp, Telegram)。</li>
+                    <li><b>便携式充电宝：</b> (1万毫安时 x 1，随身登机)。</li>
+                    <li><b>万能转换插头：</b> (已备)。</li>
+                </ul>
+
+                <h3>D. 起居住行与个人物品</h3>
+                <ul>
+                    <li><b>货币 (已备)：</b> 信用卡 (Visa/Mastercard 可以用新加坡华侨银行) + 美金现金 (USD 1000-2000) 用于零用。</li>
+                    <li><b>住宿：</b> (已由本地接待方确认)。</li>
+                </ul>
+
+            </div>
+        </details>
+
+        <details open>
+            <summary>二. 气象预报、汇率</summary>
+            <div class="content">
+
+                <h3>1. 气象预报 (11.4 - 11.13)</h3>
+                <div class="warning-box">
+                    <h4>极端温差警告 (40°C 温差)</h4>
+                    <p><b>哈萨克斯坦站 (冬季)：</b>必须携带厚羽绒服、保暖内衣、手套、帽子、防滑保暖靴 (气温 -15°C 至 -5°C)。</p>
+                    <p><b>巴基斯坦站 (秋季)：</b>携带标准商务西装、衬衫、薄毛衣或夹克 (气温 10°C 至 25°C)。</p>
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>地点</th>
+                            <th>日期</th>
+                            <th>概况</th>
+                            <th>平均气温</th>
+                            <th>着装</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><b>哈萨克斯坦 (阿斯塔纳)</b></td>
+                            <td>11.4 - 11.8</td>
+                            <td>严酷冬季</td>
+                            <td>-15°C ~ -5°C</td>
+                            <td>全套防寒装备 (羽绒服)</td>
+                        </tr>
+                        <tr>
+                            <td><b>巴基斯坦 (伊斯兰堡)</b></td>
+                            <td>11.9 - 11.13</td>
+                            <td>黄金秋季</td>
+                            <td>10°C ~ 25°C</td>
+                            <td>商务秋装 (西装+夹克)</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3 style="margin-top: 20px;">2. 实时汇率 (截至 2025.10.26)</h3>
+                <ul>
+                    <li><b>哈萨克斯坦坚戈 (KZT)：</b> 1 人民币 ≈ 75.6 KZT</li>
+                    <li><b>巴基斯坦卢比 (PKR)：</b> 1 人民币 ≈ 39.4 PKR</li>
+                    <li><i>(备注：两国均可接受人民币结算，此汇率供您参考报价。)</i></li>
+                </ul>
+            </div>
+        </details>
+
+        <details open>
+            <summary>三. 核心竞品分析：Bose (大件音响)</summary>
+            <div class="content analysis">
+
+                <h3>哈萨克斯坦 (阿斯塔纳)</h3>
+                <h4>市场定位：“官方市场”，公认的“大众高端”品牌。</h4>
+                <ul>
+                    <li><b>主要售卖场所/集散地：</b>
+                        <ul>
+                            <li>大型正规电器城: <span class="market-location">Sulpak</span>, <span class="market-location">Technodom</span>, <span class="market-location">Alser</span>。</li>
+                            <li>Bose B2B 官方渠道。</li>
+                            <li><span class="key-point">潜在二级批发线索地:</span> <span class="market-location">Evraziya 购物中心 (Евразия) 及其周边市场</span> (零售与小型批发混合)。</li>
+                        </ul>
+                     </li>
+                    <li><b>市场热度：</b>中高 (利基市场)。富裕阶层和专业用户认可度高。</li>
+                    <li><b>您的战略：</b>您是在和Bose**正面竞争**。您的产品设计、质感和认证 (EAC) 必须达到欧洲标准，用以说服 Sulpak 等大型采购商。</li>
+                </ul>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Bose 型号</th>
+                            <th>销售客单价 (RMB, 约)</th>
+                            <th>热度 & 分析</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><b>S1 Pro / S1 Pro+</b><br>(便携式PA/派对音箱)</td>
+                            <td>¥4,300 - ¥6,800</td>
+                            <td><b>热度最高的大件 (爆款)</b>。被视为专业象征，在活动、高端场地中非常流行。</td>
+                        </tr>
+                        <tr>
+                            <td><b>Home Speaker 500</b><br>(智能家用音箱)</td>
+                            <td>¥3,700 - ¥4,300</td>
+                            <td><b>热度中等。</b> 高端智能家居的可选项，与Sonos等品牌竞争。</td>
+                        </tr>
+                        <tr>
+                            <td><b>Smart Soundbar 900</b><br>(旗舰回音壁)</td>
+                            <td>¥7,000 - ¥8,500</td>
+                            <td><b>热度中 (利基)。</b> 家庭影院发烧友的选择，渠道商的顶级陈列品。</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3 style="margin-top: 30px;">巴基斯坦 (伊斯兰堡 / 拉瓦尔品第)</h3>
+                <h4>市场定位：“灰色/奢侈品市场”，价格畸高，两极分化。</h4>
+                <ul>
+                     <li><b>主要售卖场所/集散地：</b>
+                        <ul>
+                           <li><span class="key-point">核心批发集散地 (必去):</span> 位于<span class="market-location">拉瓦尔品第 (Rawalpindi)</span> 的 <span class="market-location">Raja Bazaar (拉贾市场)</span> 和 <span class="market-location">Saddar Market (萨达尔市场)</span>。
+                               <span class="market-note">注意：伊斯兰堡主要是零售和总部，批发核心在拉瓦尔品第。这是您寻找批发商的关键区域。</span>
+                           </li>
+                           <li>“灰色市场”渠道 (从迪拜带货)。</li>
+                           <li>极少数高端音响店 (如伊斯兰堡的 LEDshop.pk)。</li>
+                           <li><span class="market-note">主流电商 (Daraz.pk) 基本无大件Bose踪影。</span></li>
+                        </ul>
+                    </li>
+                    <li><b>市场热度：</b>官方渠道极低；“灰色市场”有一定热度（作为炫耀性消费品）。</li>
+                    <li><b>您的战略：</b>您**不是**在和Bose竞争。您是为那些“渴望Bose而不得”的客户提供**“付得起的Bose体验”**。您的对手是其他中国品牌。</li>
+                </ul>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Bose 型号</th>
+                            <th>销售客单价 (RMB, 约)</th>
+                            <th>热度 & 分析</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><b>Smart Soundbar 900</b><br>(旗舰回音壁)</td>
+                            <td>¥10,100 - ¥12,800</td>
+                            <td><b>热度极低 (官方价畸高)</b>。高端音响店的“镇店之宝”，象征意义大于实际销量。</td>
+                        </tr>
+                        <tr>
+                            <td><b>Acoustimass 10 V</b><br>(5.1家庭影院)</td>
+                            <td>¥20,300+</td>
+                            <td><b>热度极低。</b> 绝对的奢侈品，价格堪比二手车。</td>
+                        </tr>
+                        <tr>
+                            <td><b>S1 Pro / S1 Pro+</b></td>
+                            <td>~¥6,100 (灰色市场价)<br>~¥8,000+ (官方估价)</td>
+                            <td><b>“灰色市场”有热度。</b> 客户宁愿从迪拜背回，也不愿买官方高价货。这是您的重要切入点。</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+        </details>
+
+        <details open>
+            <summary>四. 核心竞品分析：吹风机</summary>
+            <div class="content analysis">
+
+                <h3>哈萨克斯坦 (阿斯塔纳)</h3>
+                <h4>市场定位：欧洲品牌主导的成熟市场，重视品牌与认证 (EAC)。</h4>
+                 <ul>
+                    <li><b>主要售卖场所/集散地：</b>
+                        <ul>
+                            <li>大型正规电器城: <span class="market-location">Sulpak</span>, <span class="market-location">Technodom</span>, <span class="market-location">Alser</span>。</li>
+                            <li><span class="key-point">潜在二级批发线索地:</span> <span class="market-location">Evraziya 购物中心 (Евразия) 及其周边市场</span> (零售与小型批发混合)。</li>
+                        </ul>
+                    </li>
+                    <li><b>市场热度：</b>消费者对品牌认知度高，愿意为飞利浦、好运达等品牌支付溢价。</li>
+                    <li><b>您的战略：</b>您的产品设计和质感必须对标欧洲一线品牌 (飞利浦/Rowenta)，价格可参考俄语区成功品牌 (Vitek)，强调**“设计感+性价比”**。</li>
+                </ul>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>品牌等级</th>
+                            <th>客单价 (RMB)</th>
+                            <th>主流品牌</th>
+                            <th>市场地位 & 您的战略</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                         <tr>
+                            <td><b>奢侈/顶流</b></td>
+                            <td>¥2,500 - ¥4,000+</td>
+                            <td><b>Dyson (戴森)</b></td>
+                            <td>品牌天花板，证明市场对高溢价科技产品的接受度。</td>
+                        </tr>
+                        <tr>
+                            <td><b>高端主力</b></td>
+                            <td>¥350 - ¥850</td>
+                            <td><b>Philips, Rowenta, Braun</b></td>
+                            <td>市场统治者，渠道商衡量新品牌的黄金标准。</td>
+                        </tr>
+                        <tr>
+                            <td><b>中端主力</b></td>
+                            <td>¥200 - ¥450</td>
+                            <td><b>Remington, Vitek, Redmond</b></td>
+                            <td><b>您的直接对标。</b> Vitek/Redmond已成功扎根。</td>
+                        </tr>
+                        <tr>
+                            <td><b>经济/低端</b></td>
+                            <td>¥100 - ¥200</td>
+                            <td>Scarlett, Polaris等</td>
+                            <td>市场基础盘，非目标客户。</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3 style="margin-top: 30px;">巴基斯坦 (伊斯兰堡 / 拉瓦尔品第)</h3>
+                <h4>市场定位：两极分化。正规渠道品牌价高；批发市场由“迪拜/中国系”品牌主导，性价比为王。</h4>
+                 <ul>
+                    <li><b>主要售卖场所/集散地：</b>
+                        <ul>
+                            <li><span class="key-point">核心批发集散地 (必去):</span> 位于<span class="market-location">拉瓦尔品第 (Rawalpindi)</span> 的 <span class="market-location">Raja Bazaar (拉贾市场)</span> 和 <span class="market-location">Saddar Market (萨达尔市场)</span>。</li>
+                            <li>正规零售渠道 (伊斯兰堡高档商场如 Centaurus Mall)。</li>
+                            <li>线上渠道 (Daraz.pk)。</li>
+                        </ul>
+                    </li>
+                    <li><b>市场热度：</b>批发市场对价格极其敏感，Geepas 和 Westpoint 是“国民级”选择。线上小米/小适等品牌正在提升消费者对中国设计的认知。</li>
+                    <li><b>您的战略：</b>您的对手是 **Geepas** 和 **Westpoint**。利用**“小米/Showsee 的设计感”** + **“比 Geepas 更优的品控和利润”** + **“人民币结算的价格优势”** 来攻占批发渠道。</li>
+                </ul>
+                <table>
+                     <thead>
+                        <tr>
+                            <th>品牌等级</th>
+                            <th>客单价 (RMB)</th>
+                            <th>主流品牌</th>
+                            <th>市场地位 & 您的战略</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                         <tr>
+                            <td><b>官方/高端</b></td>
+                            <td>¥400 - ¥900</td>
+                            <td><b>Philips, Panasonic, Braun</b></td>
+                            <td>“富人区”品牌，价格畸高，非主要对手。</td>
+                        </tr>
+                        <tr>
+                            <td><b>线上新贵</b></td>
+                            <td>¥180 - ¥400</td>
+                            <td><b>Xiaomi (小米), Showsee (小适)</b></td>
+                            <td><b>您的定位参考。</b> 教育了市场：中国品牌=高颜值+高品质。</td>
+                        </tr>
+                        <tr>
+                            <td><b>批发之王</b></td>
+                            <td>¥150 - ¥350</td>
+                            <td><b>Geepas, Westpoint, Anex</b></td>
+                            <td><b>您的核心对手。</b> Geepas是市场硬通货。</td>
+                        </tr>
+                        <tr>
+                            <td><b>低端/白牌</b></td>
+                            <td>¥50 - ¥120</td>
+                            <td>Kemei 及众多白牌</td>
+                            <td>批发市场的地基，非目标客户。</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </details>
+
+        <details open>
+            <summary>五. 核心资质与市场机会 (MOSCEN 吹风机 & Bose级音箱)</summary>
+            <div class="content analysis">
+
+                <h3>A. 核心资质 (准入门槛)</h3>
+
+                <h4>1. 两国通用</h4>
+                 <ul>
+                    <li><span class="key-point">商标保护 (Trademark):</span> 您的品牌 (如 MOSCEN) 必须通过**《马德里协定》**在中国提交国际注册，指定哈萨克斯坦和巴基斯坦，否则不受当地法律保护，有被抢注风险。<span class="key-point">(需立即启动)</span></li>
+                </ul>
+
+                <h4>2. 哈萨克斯坦 (特定要求)</h4>
+                <ul>
+                    <li><span class="key-point">EAC 认证 (强制):</span> 无论是吹风机还是音箱，都必须获得**欧亚经济联盟EAC认证** (符合 TR CU 004/2011 低电压指令 和 TR CU 020/2011 电磁兼容性)。</li>
+                    <li><span class="key-point">授权代表 (必须):</span> EAC认证需通过**哈国境内的授权代表** (通常是您的进口商/分销商) 申请。这是您谈判的**首要技术议题**。</li>
+                </ul>
+
+                <h4>3. 巴基斯坦 (特定要求)</h4>
+                 <ul>
+                    <li><span class="key-point">PSQCA 认证 (强制):</span> 吹风机和音箱都需符合**巴基斯坦标准与质量控制局 (PSQCA) 的强制认证**要求。</li>
+                    <li><span class="key-point">进口商协助 (关键):</span> 通常由您的**巴基斯坦进口商**负责处理PSQCA合规，可能需要您提供ISO 17025实验室的测试报告或接受工厂审核。必须在谈判中明确责任方。</li>
+                 </ul>
+
+                <h3 style="margin-top: 30px;">B. 市场机会分析</h3>
+
+                <h4>1. 哈萨克斯坦 (阿斯塔纳)</h4>
+                <h5>MOSCEN 吹风机</h5>
+                <ul>
+                    <li><b>机会点：</b> 抢占**中端市场 (¥200-¥450)**，挑战 Remington, Vitek 等品牌。</li>
+                    <li><b>核心策略：</b> 以**“戴森级设计 + Vitek级价格”**打动 Sulpak/Technodom 等大型零售商。强调我方产品能带来**更高的利润率**。</li>
+                    <li><b>关键障碍：</b> <span class="key-point">EAC认证</span>。必须找到愿意合作的进口商作为授权代表。</li>
+                    <li><b>加分项：</b> 提出**人民币/坚戈结算**，为客户节省汇兑成本。</li>
+                </ul>
+                 <h5>Bose级音箱</h5>
+                <ul>
+                    <li><b>机会点：</b> 满足市场对**“买得起的Bose体验”**的需求，尤其是在**S1 Pro**所代表的便携式PA/高端蓝牙音箱领域。</li>
+                    <li><b>核心策略：</b> 以**“接近Bose的音质/功能 + 显著的价格优势”**吸引零售商和B2B客户 (活动公司/酒店)。</li>
+                    <li><b>关键障碍：</b> <span class="key-point">EAC认证</span>。</li>
+                </ul>
+
+                <h4>2. 巴基斯坦 (伊斯兰堡 / 拉瓦尔品第)</h4>
+                 <h5>MOSCEN 吹风机</h5>
+                 <ul>
+                    <li><b>机会点：</b> 攻占**中高端批发市场 (¥150-¥400)**，填补“低端白牌”与“天价飞利浦”之间的巨大空白。</li>
+                    <li><b>核心策略：</b>
+                        1. 对标**Geepas/Westpoint**的价格，但强调**“小米级设计”**和**“更优品控”**。
+                        2. <span class="key-point">主打“人民币结算”优势</span>，提供比Geepas（需用美元/迪拉姆进货）更稳定的价格和利润空间。</li>
+                    <li><b>关键障碍：</b>
+                        1. <span class="key-point">PSQCA认证</span> (需与进口商明确责任)。
+                        2. <span class="key-point">客户付款能力验证 (人民币/可靠美元来源) - 这是您此行的重中之重！</span></li>
+                </ul>
+                 <h5>Bose级音箱</h5>
+                 <ul>
+                    <li><b>机会点：</b> 巨大的**“Bose真空”**市场。官方Bose价格过高，灰色市场S1 Pro的热度证明了强烈的潜在需求。</li>
+                    <li><b>核心策略：</b>
+                        1. 定位**“付得起的Bose” (Affordable Premium)**，提供远超普通中国品牌的设计和音质。
+                        2. 重点面向有能力进行**人民币结算**的大型批发商 (Seth)，尤其是在 <span class="market-location">Raja Bazaar</span> 和 <span class="market-location">Saddar Market</span>。
+                        3. 强调您的产品能帮助批发商**提升店面档次和利润**。</li>
+                     <li><b>关键障碍：</b>
+                        1. <span class="key-point">PSQCA认证</span>。
+                        2. <span class="key-point">客户付款能力验证 (人民币/可靠美元来源) - 同样是决定性因素！</span></li>
+                 </ul>
+            </div>
+        </details>
+
+
+        <footer class="footer">
+            <p>祝卢老板收获满满！。</p>
+        </footer>
+
+    </div>
+
+</body>
+</html>
