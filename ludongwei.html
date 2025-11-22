@@ -3,17 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>亚欧跨国商务考察 (最终版)</title>
+    <title>亚欧跨国商务考察 (含证件版)</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
     <style>
         :root {
-            /* 背景图：宏大的地球夜景 */
+            /* 背景：宏大的地球夜景 */
             --bg-image: url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop');
-            --glass-bg: rgba(15, 23, 42, 0.8);
+            --glass-bg: rgba(15, 23, 42, 0.85);
             --glass-border: rgba(255, 255, 255, 0.15);
             --highlight: #38bdf8;
-            --pak-green: #22c55e;
             --kaz-gold: #fbbf24;
+            --pak-green: #22c55e;
             --alert-red: #ef4444;
             --text-main: #f1f5f9;
             --text-sub: #94a3b8;
@@ -33,7 +33,7 @@
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100%;
             background: rgba(0, 0, 0, 0.6);
-            backdrop-filter: blur(8px);
+            backdrop-filter: blur(10px);
             z-index: -1;
         }
 
@@ -59,23 +59,8 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
-        .route-line {
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-            font-size: 0.9rem;
-            color: var(--text-sub);
-            margin-top: 15px;
-            flex-wrap: wrap;
-        }
-        .route-node {
-            background: rgba(255,255,255,0.1);
-            padding: 4px 10px;
-            border-radius: 15px;
-            color: #fff;
-        }
 
-        /* 通用卡片 */
+        /* 毛玻璃卡片 */
         .glass-card {
             background: var(--glass-bg);
             border: 1px solid var(--glass-border);
@@ -100,23 +85,26 @@
         .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; }
         .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
 
-        /* 汇率模块样式 */
+        /* 汇率模块 */
         .currency-card {
             background: rgba(255, 255, 255, 0.05);
             padding: 20px;
             border-radius: 16px;
             text-align: center;
-            position: relative;
-            overflow: hidden;
         }
-        .currency-flag { font-size: 2rem; margin-bottom: 10px; display: block; }
-        .currency-rate { font-size: 1.6rem; font-weight: 800; color: #fff; margin: 5px 0; }
-        .currency-sub { font-size: 0.9rem; color: var(--text-sub); }
-        .currency-usd { 
-            margin-top: 15px; padding-top: 10px; 
-            border-top: 1px dashed rgba(255,255,255,0.2); 
-            font-size: 0.85rem; color: var(--kaz-gold);
+        .currency-rate { font-size: 1.5rem; font-weight: 800; color: #fff; margin: 5px 0; }
+        .currency-usd { font-size: 0.85rem; color: var(--kaz-gold); margin-top: 10px; padding-top: 10px; border-top: 1px dashed rgba(255,255,255,0.2); }
+
+        /* 天气模块 */
+        .weather-box {
+            background: rgba(0,0,0,0.3);
+            padding: 15px;
+            border-radius: 12px;
+            text-align: center;
+            border: 1px solid transparent;
         }
+        .temp-val { font-size: 1.8rem; font-weight: bold; margin: 10px 0; }
+        .weather-tip { font-size: 0.8rem; margin-top: 5px; opacity: 0.9; }
 
         /* 细节警示模块 */
         .alert-box {
@@ -124,19 +112,29 @@
             border-radius: 12px;
             margin-bottom: 15px;
             font-size: 0.95rem;
-            line-height: 1.5;
+            line-height: 1.6;
         }
-        .alert-kaz {
-            background: rgba(59, 130, 246, 0.15);
-            border-left: 4px solid #3b82f6;
-        }
-        .alert-pak {
-            background: rgba(16, 185, 129, 0.15);
-            border-left: 4px solid #10b981;
-        }
-        .alert-title { font-weight: bold; margin-bottom: 5px; display: block; font-size: 1.05rem;}
+        .alert-kaz { background: rgba(59, 130, 246, 0.15); border-left: 4px solid #3b82f6; }
+        .alert-pak { background: rgba(16, 185, 129, 0.15); border-left: 4px solid #10b981; }
+        .alert-doc { background: rgba(148, 163, 184, 0.15); border-left: 4px solid #94a3b8; }
+        .alert-title { font-weight: bold; display: block; margin-bottom: 5px; font-size: 1.05rem; }
 
-        /* 时间轴部分 */
+        /* 酒店信息卡 */
+        .hotel-card {
+            background: rgba(251, 191, 36, 0.1);
+            border-left: 4px solid var(--kaz-gold);
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 15px;
+        }
+        .hotel-name { font-weight: bold; color: var(--kaz-gold); font-size: 1.1rem; display: flex; align-items: center; }
+        .hotel-tag { 
+            font-size: 0.75rem; background: var(--kaz-gold); color: #000; 
+            padding: 2px 6px; border-radius: 4px; margin-left: 10px; text-transform: uppercase;
+        }
+        .hotel-detail { font-size: 0.9rem; margin-top: 5px; color: #ddd; }
+
+        /* 时间轴 */
         .timeline-item {
             display: flex;
             gap: 20px;
@@ -171,31 +169,64 @@
 <div class="container">
 
     <div class="header">
-        <h1>亚欧跨国商务考察</h1>
+        <h1>亚欧跨国商务考察 (完整版)</h1>
         <p style="color: var(--text-sub);">2025.11.25 - 12.09 | 杭州 ⇄ 阿拉木图 ⇄ 阿斯塔纳 ⇄ 伊斯兰堡</p>
     </div>
 
     <div class="glass-card">
-        <div class="section-header"><span class="icon">💱</span> 资金情报：人民币汇率速查</div>
+        <div class="section-header"><span class="icon">🌍</span> 三地天气与资金情报</div>
+        
+        <div class="grid-3" style="margin-bottom: 25px;">
+            <div class="weather-box" style="border-color: #fbbf24;">
+                <div>🌧️ <b>阿拉木图</b></div>
+                <div class="temp-val" style="color: #fbbf24;">-5°C</div>
+                <div class="weather-tip">湿冷/暗冰<br>穿防滑靴/普通羽绒</div>
+            </div>
+            <div class="weather-box" style="border-color: #93c5fd;">
+                <div>🥶 <b>阿斯塔纳</b></div>
+                <div class="temp-val" style="color: #93c5fd;">-20°C</div>
+                <div class="weather-tip">极寒/大风<br>必须穿加厚羽绒/帽子</div>
+            </div>
+            <div class="weather-box" style="border-color: #86efac;">
+                <div>☀️ <b>伊斯兰堡</b></div>
+                <div class="temp-val" style="color: #86efac;">18°C</div>
+                <div class="weather-tip">舒适/微热<br>穿西装/夹克/春秋装</div>
+            </div>
+        </div>
+
         <div class="grid-2">
             <div class="currency-card" style="border: 1px solid rgba(59, 130, 246, 0.3);">
-                <span class="currency-flag">🇰🇿</span>
-                <div style="color: #93c5fd; font-weight:bold;">哈萨克斯坦坚戈 (KZT)</div>
+                <div style="color: #93c5fd; font-weight:bold;">🇰🇿 哈萨克斯坦坚戈 (KZT)</div>
                 <div class="currency-rate">1 CNY ≈ 71.5 KZT</div>
-                <div class="currency-sub">100元人民币 ≈ 7,150 坚戈</div>
                 <div class="currency-usd">B2B参考: 1 USD ≈ 515 KZT</div>
             </div>
-
             <div class="currency-card" style="border: 1px solid rgba(34, 197, 94, 0.3);">
-                <span class="currency-flag">🇵🇰</span>
-                <div style="color: #86efac; font-weight:bold;">巴基斯坦卢比 (PKR)</div>
+                <div style="color: #86efac; font-weight:bold;">🇵🇰 巴基斯坦卢比 (PKR)</div>
                 <div class="currency-rate">1 CNY ≈ 38.8 PKR</div>
-                <div class="currency-sub">100元人民币 ≈ 3,880 卢比</div>
                 <div class="currency-usd">B2B参考: 1 USD ≈ 278 PKR</div>
             </div>
         </div>
-        <div style="margin-top: 15px; font-size: 0.9rem; color: var(--text-sub); text-align: center;">
-            💡 <b>供应商提示：</b> 巴基斯坦汇率波动极大，给当地客户报价时建议<b>务必锁定美元价格</b>，接收人民币付款时需当日询价。
+    </div>
+
+    <div class="glass-card">
+        <div class="section-header"><span class="icon">🛂</span> 通关文牒：证件与签证</div>
+        <div class="grid-2">
+            <div class="alert-box alert-kaz">
+                <span class="alert-title" style="color: #93c5fd;">🇰🇿 哈萨克斯坦：免签入境</span>
+                <ul style="font-size: 0.9rem; color: #e2e8f0;">
+                    <li><b>中国护照：</b> 停留不超过14天可免签。</li>
+                    <li><b>必备文件：</b> 护照原件（有效期6个月以上）、回程机票行程单打印件、酒店预订单打印件。</li>
+                    <li><b>提示：</b> 入境时边检可能询问来意，答 "Business meeting" 即可，展示行程单。</li>
+                </ul>
+            </div>
+            <div class="alert-box alert-pak">
+                <span class="alert-title" style="color: #86efac;">🇵🇰 巴基斯坦：电子签证 (E-Visa)</span>
+                <ul style="font-size: 0.9rem; color: #e2e8f0;">
+                    <li><b>签证要求：</b> 需提前申请电子签证，并打印 <b>Visa Grant Notice</b> 纸质版随身携带。</li>
+                    <li><b>必备文件：</b> 护照、电子签打印件、邀请函（如有）、返程机票。</li>
+                    <li><b>提示：</b> 巴基斯坦海关较慢，请耐心排队。</li>
+                </ul>
+            </div>
         </div>
     </div>
 
@@ -203,30 +234,29 @@
         <div class="section-header"><span class="icon">⚠️</span> 必读：安全与商务细节</div>
         
         <div class="grid-2">
-            <div class="alert-box alert-kaz">
-                <span class="alert-title" style="color: #93c5fd;">🇰🇿 哈萨克斯坦：隐形规矩</span>
+            <div class="alert-box alert-doc">
+                <span class="alert-title" style="color: #cbd5e1;">🇰🇿 哈萨克斯坦：隐形规矩</span>
                 <ul>
-                    <li><b>打车禁忌：</b> 严禁路边招手打黑车（容易被宰或发生安全问题）。<b>必须使用 Yandex Go APP</b>，绑定国内信用卡即可，体验类似滴滴。</li>
-                    <li><b>小费文化：</b> 餐厅通常已包含10%服务费，但商务宴请时再留5-10%现金会显得很体面。</li>
-                    <li><b>商务语言：</b> 虽然年轻人懂英语，但老一辈工程商只认俄语。手机装好 <b>Google Translate (下载俄语离线包)</b> 是谈单关键。</li>
-                    <li><b>防滑警告：</b> 阿拉木图此时地面多有“暗冰”，走路不要插兜，穿深纹路的登山靴或雪地靴。</li>
+                    <li><b>打车禁忌：</b> 严禁路边招手打黑车。<b>必须使用 Yandex Go APP</b>，绑定国内信用卡即可。</li>
+                    <li><b>商务语言：</b> 老一辈工程商只认俄语。请提前下载 <b>Google Translate 俄语离线包</b>。</li>
+                    <li><b>防滑警告：</b> 阿拉木图地面多有“暗冰”，走路千万不要插兜，穿深纹路鞋子。</li>
                 </ul>
             </div>
 
-            <div class="alert-box alert-pak">
-                <span class="alert-title" style="color: #86efac;">🇵🇰 巴基斯坦：生存法则</span>
+            <div class="alert-box alert-doc">
+                <span class="alert-title" style="color: #cbd5e1;">🇵🇰 巴基斯坦：生存法则</span>
                 <ul>
-                    <li><b>饮水红线：</b> <b style="color:#fca5a5">绝对不要喝生水</b>，也不要用自来水刷牙。只喝瓶装水（Nestle或Aquafina）。</li>
-                    <li><b>电力短缺：</b> “停电（Load Shedding）”是常态。这对Bose是商机（<b>电池版音响 S1 Pro+ 需求大</b>），但对你是麻烦。随身携带大容量充电宝。</li>
-                    <li><b>拍照禁忌：</b> 在伊斯兰堡，严禁对着政府建筑、检查站、军警拍照，会被直接扣留。</li>
-                    <li><b>安全区域：</b> 活动范围限制在 F-6, F-7, F-8 区及蓝色区域（Blue Area）。避免前往拉瓦尔品第的拥挤集市深处，除非有当地熟人带路。</li>
+                    <li><b>饮水红线：</b> <b style="color:#fca5a5">绝对不要喝生水</b>，刷牙也用瓶装水。否则极易腹泻。</li>
+                    <li><b>电力短缺：</b> 停电是常态。随身携带大容量充电宝。</li>
+                    <li><b>拍照禁忌：</b> 严禁对着政府建筑、检查站、军警拍照，会被扣留。</li>
+                    <li><b>安全区域：</b> 限制在 F-6, F-7, F-8 及 Blue Area。不要独自步行深入老城批发市场。</li>
                 </ul>
             </div>
         </div>
     </div>
 
     <div class="glass-card">
-        <div class="section-header"><span class="icon">📅</span> 行程时间轴</div>
+        <div class="section-header"><span class="icon">📅</span> 行程时间轴与住宿</div>
 
         <div class="timeline-item">
             <div class="date-col">
@@ -235,8 +265,17 @@
             </div>
             <div class="content-col">
                 <span class="loc-badge" style="background:#64748b; color:white;">启程</span>
-                <div><b>杭州 ✈️ 阿拉木图</b></div>
-                <div style="color:var(--text-sub); font-size:0.9rem;">傍晚航班，抵达后入住 Rixos Almaty。</div>
+                <div><b>杭州 (HGH) ✈️ 阿拉木图 (ALA)</b></div>
+                <div style="color:var(--text-sub); font-size:0.9rem;">
+                    傍晚起飞，次日凌晨抵达。务必提前联系云栖酒店安排凌晨入住。
+                </div>
+                <div class="hotel-card">
+                    <div class="hotel-name">🏨 云栖酒店 (YunXi Hotel) <span class="hotel-tag">新手村</span></div>
+                    <div class="hotel-detail">
+                        📍 <b>位置：</b> Zhangeldina St 91 (近绿色巴扎)<br>
+                        💡 <b>理由：</b> 华人老板，全中文服务，中式早餐，新装修设施好，凌晨抵达的温暖港湾。<br>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -247,8 +286,13 @@
             </div>
             <div class="content-col">
                 <span class="loc-badge" style="background:#fbbf24; color:black;">阿拉木图</span>
-                <div><b>全天休整 / 适应性采购</b></div>
-                <div style="color:var(--text-sub); font-size:0.9rem;">购买流量卡，适应时差。不安排高强度工作。</div>
+                <div><b>全天休整 & 备战</b></div>
+                <div style="color:var(--text-sub); font-size:0.9rem;">
+                    在酒店休息倒时差。可询问老板关于如何去 Tastak 市场的路线（建议打车，约20-25分钟）。
+                </div>
+                <div class="hotel-card" style="opacity:0.7;">
+                    <div class="hotel-name">🏨 续住：云栖酒店</div>
+                </div>
             </div>
         </div>
 
@@ -259,8 +303,17 @@
             </div>
             <div class="content-col">
                 <span class="loc-badge" style="background:#3b82f6; color:white;">阿斯塔纳</span>
-                <div><b>飞往阿斯塔纳 & 左岸商务区</b></div>
-                <div style="color:var(--text-sub); font-size:0.9rem;">入住左岸酒店，下午拜访系统集成商总部。气温极低，注意保暖。</div>
+                <div><b>飞往阿斯塔纳 (Astana)</b></div>
+                <div style="color:var(--text-sub); font-size:0.9rem;">
+                    抵达极寒之都。入住左岸核心区。
+                </div>
+                <div class="hotel-card">
+                    <div class="hotel-name">🏨 Jumbaktas Hotel (姜巴塔酒店) <span class="hotel-tag">左岸核心</span></div>
+                    <div class="hotel-detail">
+                        📍 <b>位置：</b> Qarqaaly St 16 (Yesil District)<br>
+                        💡 <b>理由：</b> 紧邻 Khan Shatyr (可汗之帐) 和 Mega Silk Way，位于大客户包围圈，商务形象好。<br>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -271,8 +324,13 @@
             </div>
             <div class="content-col">
                 <span class="loc-badge" style="background:#3b82f6; color:white;">阿斯塔纳</span>
-                <div><b>政府工程渠道考察</b></div>
-                <div style="color:var(--text-sub); font-size:0.9rem;">重点：大型场馆、世博园区音响系统。</div>
+                <div><b>音响市场深耕 (左岸)</b></div>
+                <div style="color:var(--text-sub); font-size:0.9rem;">
+                    <b>考察重点：</b> Khan Shatyr 内部声学结构、左岸集成商总部、世博园 (EXPO)。
+                </div>
+                <div class="hotel-card" style="opacity:0.7;">
+                    <div class="hotel-name">🏨 续住：Jumbaktas Hotel</div>
+                </div>
             </div>
         </div>
 
@@ -283,8 +341,18 @@
             </div>
             <div class="content-col">
                 <span class="loc-badge" style="background:#fbbf24; color:black;">阿拉木图</span>
-                <div><b>返回阿拉木图</b></div>
-                <div style="color:var(--text-sub); font-size:0.9rem;">周日晚间考察当地酒吧/Livehouse市场（Bose ShowMatch潜在客户）。</div>
+                <div><b>飞回阿拉木图 (更换酒店)</b></div>
+                <div style="color:var(--text-sub); font-size:0.9rem;">
+                    返回旧都。此次入住西区，直插批发市场核心。
+                </div>
+                <div class="hotel-card">
+                    <div class="hotel-name">🏨 宏图商务酒店 (HONG TU) <span class="hotel-tag">批发首选</span></div>
+                    <div class="hotel-detail">
+                        📍 <b>位置：</b> Rayimbek Ave 298A (西区)<br>
+                        💡 <b>理由：</b> 离 Tastak 电子批发市场极近，方便最后几天集中跑量。<br>
+                        📅 <b>备注：</b> 入住时间: 11.30 - 12.04 (共4晚)
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -295,8 +363,15 @@
             </div>
             <div class="content-col">
                 <span class="loc-badge" style="background:#fbbf24; color:black;">阿拉木图</span>
-                <div><b>批发市场与核心分销商</b></div>
-                <div style="color:var(--text-sub); font-size:0.9rem;">Tastak市场（中低端批发）与乐器街（高端代理）。</div>
+                <div><b>深度跑动：批发与零售</b></div>
+                <div style="color:var(--text-sub); font-size:0.9rem;">
+                    <b>Day 1:</b> Tastak 市场 (就在酒店旁) 深度挖掘二级批发商。<br>
+                    <b>Day 2:</b> Gogol St 高端琴行拜访。<br>
+                    <b>Day 3:</b> 商务收尾，打包行李。
+                </div>
+                <div class="hotel-card" style="opacity:0.7;">
+                    <div class="hotel-name">🏨 续住：宏图商务酒店</div>
+                </div>
             </div>
         </div>
 
@@ -307,8 +382,18 @@
             </div>
             <div class="content-col">
                 <span class="loc-badge" style="background:#22c55e; color:white;">巴基斯坦</span>
-                <div><b>飞往伊斯兰堡 (跨国转场)</b></div>
-                <div style="color:var(--text-sub); font-size:0.9rem;">入住 Serena Hotel（安全首选）。准备美元现金。</div>
+                <div><b>阿拉木图 ✈️ 伊斯兰堡 (Islamabad)</b></div>
+                <div style="color:var(--text-sub); font-size:0.9rem;">
+                    跨国转场。进入安全敏感区。
+                </div>
+                <div class="hotel-card">
+                    <div class="hotel-name">🏨 Grand Peace House II (和平之家二部) <span class="hotel-tag">安全中心</span></div>
+                    <div class="hotel-detail">
+                        📍 <b>位置：</b> F-7 Sector (富人区)<br>
+                        💡 <b>理由：</b> 华人老字号，包中餐，情报中心。<br>
+                        ⚠️ <b>重要：</b> 务必让宾馆派车接机。
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -319,11 +404,13 @@
             </div>
             <div class="content-col">
                 <span class="loc-badge" style="background:#22c55e; color:white;">伊斯兰堡</span>
-                <div><b>巴基斯坦音响市场深耕</b></div>
+                <div><b>巴基斯坦音响市场考察</b></div>
                 <div style="color:var(--text-sub); font-size:0.9rem;">
-                    1. Blue Area (高端商务)<br>
-                    2. Rawalpindi College Road (批发集散 - 需熟人带路)<br>
-                    3. 清真寺扩声项目考察
+                    <b>1. Blue Area:</b> 拜访高端客户。<br>
+                    <b>2. Rawalpindi (College Road):</b> 批发市场考察（需向导）。<br>
+                </div>
+                <div class="hotel-card" style="opacity:0.7;">
+                    <div class="hotel-name">🏨 续住：Grand Peace House II</div>
                 </div>
             </div>
         </div>
@@ -335,8 +422,10 @@
             </div>
             <div class="content-col">
                 <span class="loc-badge" style="background:#64748b; color:white;">归国</span>
-                <div><b>伊斯兰堡 ✈️ 广州</b></div>
-                <div style="color:var(--text-sub); font-size:0.9rem;">结束行程，整理名片与订单。</div>
+                <div><b>伊斯兰堡 (ISB) ✈️ 广州 (CAN)</b></div>
+                <div style="color:var(--text-sub); font-size:0.9rem;">
+                    乘坐南航航班回国。结束行程。
+                </div>
             </div>
         </div>
 
